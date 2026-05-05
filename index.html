@@ -2,81 +2,57 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Noticia: Natalie Portman será madre por tercera vez</title>
+    <title>Noticia Estilada: Natalie Portman</title>
+    <!-- Vinculación del CSS externo -->
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <nav>
-        <a href="#">Inicio</a> | 
-        <a href="#">Espectáculos</a> | 
+    <nav id="menu-principal">
+        <a href="#">Inicio</a>
+        <a href="#">Espectáculos</a>
         <a href="#">Internacionales</a>
     </nav>
 
-    <hr>
+    <main class="contenedor-noticia">
+        <article>
+            <header>
+                <h1>Natalie Portman será madre por tercera vez a los 44 años: "Agradecida; sé que es un milagro"</h1>
+                <h2 class="subtitulo">La actriz, de 44 años, dio la noticia en una entrevista y destacó que se trata de un momento especial en su vida personal.</h2>
+                <p class="autor">Por <span class="firma">Redacción Espectáculos</span> - 28 de Abril de 2026</p>
+            </header>
 
-    <article>
-        <h1>Natalie Portman será madre por tercera vez a los 44 años: "Agradecida; sé que es un milagro"</h1>
-        <h2>La actriz, de 44 años, dio la noticia en una entrevista y destacó que se trata de un momento especial en su vida personal.</h2>
-        
-        <p>Por <span style="color: gray;">Redacción Espectáculos</span> - 28 de Abril de 2026</p>
+            <img src="natalie-portman.jpg" alt="Retrato de Natalie Portman" class="foto-principal">
 
-        <img src="natalie-portman.jpg" alt="Retrato de Natalie Portman" width="600">
+            <section class="cuerpo-texto">
+                <p>
+                    <strong>La actriz Natalie Portman anunció que está embarazada de su tercer hijo.</strong> A sus 44 años, 
+                    confirmó la noticia en una entrevista con Harper’s Bazaar, donde expresó su felicidad por esta nueva 
+                    etapa junto a su pareja, el músico francés Tanguy Destable.
+                </p>
+                <p>
+                    "Estamos muy felices. <strong>Me siento profundamente agradecida. Sé que es un privilegio y un milagro</strong>", 
+                    señaló la protagonista de <em>Thor: Love and Thunder</em>.
+                </p>
+            </section>
+        </article>
 
-        <section>
-            <p>
-                <strong>La actriz Natalie Portman anunció que está embarazada de su tercer hijo.</strong> A sus 44 años, 
-                confirmó la noticia en una entrevista con Harper’s Bazaar, donde expresó su felicidad por esta nueva 
-                etapa junto a su pareja, el músico francés Tanguy Destable.
-            </p>
-
-            <p>
-                "Estamos muy felices. <strong>Me siento profundamente agradecida. Sé que es un privilegio y un milagro</strong>", 
-                señaló la protagonista de <em>Thor: Love and Thunder</em>.
-            </p>
-
-            <p>
-                Este será el primer hijo que tendrá con Destable y el tercero en su vida. La actriz 
-                <strong>ya es madre de Aleph, de 14 años, y Amalia, de 9</strong>, fruto de su relación con el coreógrafo 
-                Benjamin Millepied, con quien estuvo casada durante más de diez años hasta su separación en 2024.
-            </p>
-            
-            <p>
-                Actualmente radicada en París, <strong>contó que se siente con más vitalidad de la que imaginaba y que 
-                está disfrutando plenamente este proceso.</strong>
-            </p>
+        <section id="suscripcion">
+            <h3>¡Suscribite a nuestro Newsletter!</h3>
+            <form action="#" method="get">
+                <fieldset>
+                    <legend>Datos de Suscripción</legend>
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <button type="submit" class="btn-enviar">Suscribirme ahora</button>
+                </fieldset>
+            </form>
         </section>
-    </article>
-
-    <hr>
-
-    <section>
-        <h3>¡Suscribite a nuestro Newsletter!</h3>
-        <p>Recibí las últimas noticias del mundo del espectáculo directamente en tu correo.</p>
-
-        <form action="#" method="get">
-            <fieldset>
-                <legend>Datos de Suscripción</legend>
-                
-                <label for="nombre">Nombre completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <br><br>
-
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-                <br><br>
-                
-                <label for="intereses">Tema de interés principal:</label>
-                <select id="intereses" name="intereses">
-                    <option value="cine">Cine y Series</option>
-                    <option value="musica">Música</option>
-                    <option value="farandula">Farándula</option>
-                </select>
-                <br><br>
-
-                <button type="submit">Suscribirme ahora</button>
-            </fieldset>
-        </form>
-    </section>
+    </main>
 
 </body>
 </html>
