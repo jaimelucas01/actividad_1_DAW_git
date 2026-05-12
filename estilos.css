@@ -1,73 +1,97 @@
-/* 1. Selector Universal: Reseteo de márgenes */
+/* --- BOX MODEL & RESET --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 2. Selector de Etiqueta: Fondo y tipografía general */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    padding: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #1a1a1a;
 }
 
-/* 3. Selector de ID: Estilo para la navegación */
-#menu-principal {
-    background-color: #222;
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* 4. Selector Descendente: Enlaces dentro del nav */
-#menu-principal a {
+/* --- MOBILE FIRST (Diseño para celulares por defecto) --- */
+#cabecera {
+    background-color: #00427c; /* Azul Francia */
     color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
+    padding: 20px;
+    text-align: center;
 }
 
-/* 5. Selector de Clase: Contenedor central */
-.contenedor-noticia {
-    max-width: 800px;
-    margin: 0 auto;
+nav ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.contenedor-principal {
+    display: block; /* En mobile todo va uno debajo del otro */
+    padding: 15px;
+}
+
+.noticia-full {
     background: white;
-    padding: 40px;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
     border: 1px solid #ddd;
 }
 
-.subtitulo {
-    color: #555;
-    font-style: italic;
-    margin: 15px 0;
-}
-
-.firma {
-    color: gray;
+.etiqueta {
+    background: #ce1126;
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.7rem;
     font-weight: bold;
 }
 
-.foto-principal {
+.imagen-responsive {
     width: 100%;
     height: auto;
-    border-bottom: 4px solid #e74c3c;
-    margin: 20px 0;
+    margin: 15px 0;
+    border: 1px solid #ccc;
 }
 
-/* Estilos para el formulario */
-#suscripcion {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 2px solid #eee;
+.columna-lateral {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
 }
 
-.btn-enviar {
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
+/* --- TABLET (Media Query) --- */
+@media (min-width: 600px) and (max-width: 1024px) {
+    body {
+        background-color: #e9ecef;
+    }
+    .contenedor-principal {
+        padding: 30px;
+    }
+    nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+/* --- DESKTOP (Media Query) --- */
+@media (min-width: 1025px) {
+    .contenedor-principal {
+        display: flex; /* Acá usamos Flexbox para las dos columnas */
+        max-width: 1100px;
+        margin: 0 auto;
+        gap: 30px;
+    }
+
+    .noticia-full {
+        flex: 2; /* Ocupa más espacio */
+    }
+
+    .columna-lateral {
+        flex: 1; /* Ocupa menos espacio */
+        height: fit-content;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
 }
