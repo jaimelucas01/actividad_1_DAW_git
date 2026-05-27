@@ -1,97 +1,180 @@
-/* --- BOX MODEL & RESET --- */
+
+:root {
+    --color-principal: #2c3e50;
+    --color-fondo: #f4f4f4;
+    --color-texto: #333;
+}
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #1a1a1a;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
 }
 
-/* --- MOBILE FIRST (Diseño para celulares por defecto) --- */
-#cabecera {
-    background-color: #00427c; /* Azul Francia */
-    color: white;
-    padding: 20px;
+/* =========================================
+   HEADER Y NAVEGACIÓN
+========================================= */
+.cabecera {
+    background-color: #fff;
+    border-bottom: 2px solid var(--color-principal);
+    padding: 10px 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.logo {
     text-align: center;
+    font-size: 2.2rem;
+    color: var(--color-principal);
+    margin: 10px 0;
 }
 
-nav ul {
-    list-style: none;
-    margin-top: 10px;
+.menu-hamburguesa {
+    font-size: 1.5rem;
+    cursor: pointer;
 }
+
+/* Ocultar menú horizontal en Mobile */
+.navegacion-principal {
+    display: none; 
+}
+
 
 .contenedor-principal {
-    display: block; /* En mobile todo va uno debajo del otro */
+    display: flex;
+    flex-direction: column; /* Todo apilado hacia abajo en celular */
+    padding: 15px;
+    gap: 20px;
+}
+
+.noticia-principal {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.noticia-principal img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.contenido-noticia {
     padding: 15px;
 }
 
-.noticia-full {
-    background: white;
-    padding: 20px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
+.btn-leer {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: var(--color-principal);
+    color: #fff;
+    text-decoration: none;
 }
 
-.etiqueta {
-    background: #ce1126;
-    color: white;
-    padding: 4px 8px;
-    font-size: 0.7rem;
-    font-weight: bold;
+.noticias-secundarias {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.imagen-responsive {
-    width: 100%;
-    height: auto;
-    margin: 15px 0;
-    border: 1px solid #ccc;
-}
-
-.columna-lateral {
+.card-noticia {
     background: #fff;
     padding: 15px;
     border: 1px solid #ddd;
 }
 
-/* --- TABLET (Media Query) --- */
-@media (min-width: 600px) and (max-width: 1024px) {
-    body {
-        background-color: #e9ecef;
+.card-noticia img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card-noticia a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.banner-ad {
+    background: #e0e0e0;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 15px;
+    border: 2px dashed #999;
+}
+
+.pie-pagina {
+    background: var(--color-principal);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+@media (min-width: 768px) {
+    .noticias-secundarias {
+        flex-direction: row; /* Las secundarias se ponen una al lado de la otra */
+        flex-wrap: wrap;
     }
-    .contenedor-principal {
-        padding: 30px;
-    }
-    nav ul {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+    .card-noticia {
+        flex: 1 1 calc(50% - 15px); /* Ocupan la mitad del espacio */
     }
 }
 
-/* --- DESKTOP (Media Query) --- */
-@media (min-width: 1025px) {
-    .contenedor-principal {
-        display: flex; /* Acá usamos Flexbox para las dos columnas */
-        max-width: 1100px;
-        margin: 0 auto;
+/* =========================================
+   MEDIA QUERIES (Desktop) - Mínimo 1024px
+========================================= */
+@media (min-width: 1024px) {
+    /* Comportamiento del menú */
+    .menu-hamburguesa { display: none; } /* Chau hamburguesa */
+    
+    .navegacion-principal { display: block; } /* Hola menú horizontal */
+    .navegacion-principal ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
         gap: 30px;
     }
-
-    .noticia-full {
-        flex: 2; /* Ocupa más espacio */
+    .navegacion-principal a {
+        text-decoration: none;
+        color: var(--color-texto);
+        font-weight: bold;
+        text-transform: uppercase;
     }
 
-    .columna-lateral {
-        flex: 1; /* Ocupa menos espacio */
-        height: fit-content;
+    /* Layout a dos columnas con Flexbox */
+    .contenedor-principal {
+        flex-direction: row; /* Main y Aside se ponen lado a lado */
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    h1 {
-        font-size: 2.5rem;
+    .seccion-noticias {
+        flex: 3; /* Ocupa el 75% del ancho */
+    }
+
+    .seccion-publicidad {
+        flex: 1; /* Ocupa el 25% del ancho */
+    }
+    
+    .card-noticia {
+        flex: 1 1 calc(33.333% - 15px); /* Las secundarias pasan a ser 3 columnas */
     }
 }

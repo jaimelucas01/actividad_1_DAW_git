@@ -3,53 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PSG a la carga por Julián Álvarez - Rosario3</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>El Faro de Funes - Portada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="cabecera">
-        <h1>Rosario3 - Deportes</h1>
-        <nav>
+
+    <header class="cabecera">
+        <div class="top-bar">
+            <span class="fecha">Martes, 26 de Mayo de 2026</span>
+            <div class="menu-hamburguesa">☰</div>
+        </div>
+        
+        <h1 class="logo">El Faro de Funes</h1>
+        
+        <nav class="navegacion-principal">
             <ul>
-                <li><a href="#">Fútbol</a></li>
-                <li><a href="#">Mercado de Pases</a></li>
-                <li><a href="#">Internacional</a></li>
+                <li><a href="#">Locales</a></li>
+                <li><a href="#">Tecnología</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Economía</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="contenedor-principal">
-        <article class="noticia-full">
-            <header>
-                <span class="etiqueta">BOMBA EN EUROPA</span>
-                <h1>París Saint-Germain a la carga por Julián Álvarez: Luis Enrique lo tiene en su lista</h1>
-                <p class="copete">El club francés busca renovar su delantera tras la salida de sus figuras y el delantero de la selección argentina es el principal apuntado.</p>
-            </header>
-
-            <section class="cuerpo">
-                <!-- Imagen con clase para Box Model -->
-              <img src="./img/julian_alvarez.jpg.jpg" alt="Julián Álvarez" class="imagen-responsive">
-                
-                <div class="texto-noticia">
-                    <p>El mercado de pases europeo comienza a moverse con fuerza y uno de los nombres que más suena en las oficinas del **París Saint-Germain** es el de Julián Álvarez. El ex River, actualmente en el Manchester City, sería el pedido expreso del técnico Luis Enrique para la próxima temporada.</p>
-                    <p>Si bien la "Araña" es pieza importante para Pep Guardiola, la posibilidad de tener mayor rodaje y ser la cara principal del proyecto en Francia podría inclinar la balanza.</p>
+        
+        
+        <section class="seccion-noticias">
+            
+            <article class="noticia-principal">
+                <img src="https://via.placeholder.com/800x400" alt="Noticia Principal">
+                <div class="contenido-noticia">
+                    <h2>Nuevo polo tecnológico abre sus puertas para empresas de software</h2>
+                    <p>El desarrollo local busca atraer a jóvenes ingenieros y potenciar la creación de startups en la región. Un avance clave para la industria digital.</p>
+                    <a href="#" class="btn-leer">Leer más</a>
                 </div>
-            </section>
-        </article>
+            </article>
 
-        <aside class="columna-lateral">
-            <div class="caja-relacionada">
-                <h3>Más Deportes</h3>
-                <ul>
-                    <li><a href="#">Lionel Messi y su futuro en Miami</a></li>
-                    <li><a href="#">Central y Newell's: La previa del clásico</a></li>
-                </ul>
+            <div class="noticias-secundarias">
+                <article class="card-noticia">
+                    <h3><a href="#">Avances en inteligencia artificial para 2026</a></h3>
+                </article>
+                <article class="card-noticia">
+                    <img src="https://via.placeholder.com/300x150" alt="Deportes">
+                    <h3><a href="#">Resultados del torneo regional de fútbol amateur</a></h3>
+                </article>
+                <article class="card-noticia">
+                    <h3><a href="#">El mercado de pases europeo al rojo vivo</a></h3>
+                </article>
+            </div>
+
+        </section>
+
+       
+        <aside class="seccion-publicidad">
+            <div class="banner-ad">
+                <p>Espacio Publicitario</p>
+                <strong>¡Anunciá acá!</strong>
+            </div>
+            <div class="banner-ad">
+                <p>Publicidad</p>
             </div>
         </aside>
+
     </main>
 
-    <footer class="pie">
-        <p>&copy; 2026 - Lucas Jaime - Student</p>
+    <footer class="pie-pagina">
+        <p>&copy; 2026 El Faro de Funes - Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>
